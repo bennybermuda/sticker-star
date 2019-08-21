@@ -1,0 +1,22 @@
+{
+  "name": "sticker-bulletin-board",
+  "version": "0.0.1",
+  "description": "my first socket.io app",
+  "dependencies": {
+    "express": "^4.17.1"
+  },
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bennybermuda/sticker-star.git"
+  },
+  "author": "Benny Bermuda",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/bennybermuda/sticker-star/issues"
+  },
+  "homepage": "https://github.com/bennybermuda/sticker-star#readme"
+}
