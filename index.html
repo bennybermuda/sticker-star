@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, user-scalable=no">
+	<link href='http://fonts.googleapis.com/css?family=Oswald' rel='stylesheet' type='text/css'>
+	<title>StickerStar</title>
+	<style>
+		body {
+			background-color: #287eff;
+			font-family: 'Oswald', sans-serif;
+			color: white;
+			overflow: hidden;
+		}
+		canvas {
+			margin: auto;
+			left: 0; top: 0; right: 0; bottom:0;
+			position: absolute;
+			width: 1000px;
+			height: 384px;
+			background-color: white;
+			padding: 0;
+			box-shadow: 0px 3px 1px 2px rgba(0,0,0,0.2);
+			border-radius: 8px;
+		}
+		#nameID {
+			position: absolute;
+			top: 10%;
+			width: 100%;
+			font-size: 1.2em;
+			text-align: center;
+			user-select: none;
+			-webkit-user-select: none;
+			-moz-user-select: none;
+			-ms-user-select: none;
+		}
+		#nameID:hover {
+			cursor: pointer;
+		}
+		#users {
+			position: absolute;
+			width: 100%;
+			font-size: 1.2em;
+			text-align: center;
+			color: #ffe300;
+			bottom: 10%;
+			user-select: none;
+			-webkit-user-select: none;
+			-moz-user-select: none;
+			-ms-user-select: none;
+		}
+		#users:hover {
+			cursor: pointer;
+		}
+        #vehicles {
+            display: inline;
+        }
+        #stickers {
+            display: inline;
+        }
+	</style>
+</head>
+    <body>
+        <p id='nameID'></p>
+	    <canvas id='canv'></canvas>
+	    <p id='users'></p>
+        <div id="stickers">
+            <section class="drag-vehicle">
+            <h2> Drag and drop! </h2>
+            <ul id="vehicles">
+                <li>
+            <!-- draggable objects must have draggable attribute -->
+                    <img draggable="true" alt="stick1" src="stickers/stick1.png" width="500" height="400">
+                </li>
+                <li>
+                    <img draggable="true" alt="stick2" src="stickers/stick2.png" width="500" height="400">
+                </li>
+                <li>
+                    <img draggable="true" alt="stick3" src="stickers/stick3.png" width="500" height="400">
+                </li>
+                <li>
+                    <img draggable="true" alt="stick4" src="stickers/stick4.png" width="500" height="400">
+                </li>
+            </ul>
+            </section>
+        </div>
+    </body>
+</html>
