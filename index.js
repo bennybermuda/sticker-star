@@ -8,5 +8,17 @@ app.get('/', function(req, res){
 });
 
 http.listen(3000, function(){
-  console.log('listening on *:3000');
+  console.log('Running Server');
 });
+
+$('#carouselExample').on('slide.bs.carousel', function (e) {
+
+    var $e = $(e.relatedTarget);
+    var idx = $e.index();
+    var itemsPerSlide = 4;
+    var totalItems = $('.carousel-item').length;
+    
+    if (idx >= totalItems-(itemsPerSlide-1)) {
+        var it = itemsPerSlide - (totalItems - idx);
+        for (var i=0; i
+    
