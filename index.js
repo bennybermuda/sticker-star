@@ -1,12 +1,16 @@
-var app = require('express')();
-//function handler that you can supply to an HTTP server
+var express = require('express');
+var app = express();
 var http = require('http').createServer(app);
 var io = require('socket.io')(http)
-
+app.use(express.static('public'));
 app.get('/', function(req, res){
   //define a route handler that gets called when we hit our website home
   res.sendFile(__dirname + '/index.html');
 });
+
+
+
+
 
 // Start counting users online
 var count = 0

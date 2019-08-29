@@ -28,10 +28,8 @@
     text-align: center      
 }
 
-#test p {
-    opacity: 0;
+#test h3 {
     margin-top: 25px;
-    font-size: 21px;
     text-align: center;
 }
 
