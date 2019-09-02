@@ -9,9 +9,6 @@ app.get('/', function(req, res){
 });
 
 
-
-
-
 // Start counting users online
 var count = 0
 
@@ -25,7 +22,7 @@ io.on('connection', function(socket) {
 	io.sockets.emit('userCount', count)
 
 	// Grammar for users online
-	if (count > 1) {
+	if (count > 1 || count == 0) {
 		var txt = ' people are online'
 	}
 	else {
@@ -39,7 +36,7 @@ io.on('connection', function(socket) {
     // Generate Username
     var adj = ['Fluffy', 'Spicy', 'Spiffy', 'Fancy', 'Frilly', 'Sparky']
     
-    var noun = ['Gorilla', 'Couch', 'Television', 'Wizard', 'Toolbox']
+    var noun = ['Gorilla', 'Couch', 'Television', 'Fries', 'Beach Ball']
     
     var ending = ['Jr', 'Sr', 'III', 'IV', 'V']
     
@@ -60,6 +57,7 @@ io.on('connection', function(socket) {
 		console.log(name+ ' left')
 		count--
 		io.sockets.emit('userCount', count)
+        console.log(count + txt)
 	})
 })
     

@@ -54,6 +54,10 @@
 </style>
 </head>
     <body id='body'>
+        <script src="/socket.io/socket.io.js"></script>
+        <script>
+            var socket = io();
+        </script>
         <p id='nameID'></p>
 	    <canvas id='canv'></canvas>
 	    <p id='users'></p>
@@ -67,16 +71,16 @@
             </ol>
             <div class="carousel-inner" role="listbox">
                 <div class="carousel-item active">
-                    <img class="d-block" src="stickers/stick1.png" alt="First Slide" img draggable="true" width="300" height="200" id="center"> 
+                    <img class="d-block" src="stickers/stick1.png" alt="First Slide" width="300" height="200" id="center"> 
                 </div>
                 <div class="carousel-item">
-                    <img class="d-block" src="stickers/stick2.png" alt="Second Slide" img draggable="true" width="300" height="200" id="center">  
+                    <img class="d-block" src="stickers/stick2.png" alt="Second Slide" width="300" height="200" id="center">  
                 </div>
                 <div class="carousel-item">
-                    <img class="d-block" src="stickers/stick3.png" alt="Third Slide" img draggable="true" width="300" height="200" id="center"> 
+                    <img class="d-block" src="stickers/stick3.png" alt="Third Slide" width="300" height="200" id="center"> 
                 </div>
                 <div class="carousel-item">
-                    <img class="d-block" src="stickers/stick4.png" alt="Fourth Slide" img draggable="true" width="300" height="200" id="center">
+                    <img class="d-block" src="stickers/stick4.png" alt="Fourth Slide" width="300" height="200" id="center">
                 </div>
             <a class="carousel-control-prev" href="#StickerCarousel" role="button" data-slide="prev">
                 <span class="carousel-control-prev-icon"></span>
@@ -98,6 +102,40 @@
             $(document).ready(function(){
                 $("#test").fadeOut(10000);
             });
+            var canvas = document.getElementById('canv');
+            var ctx = canvas.getContext('2d');
+            canvas.addEventListener('click', placeImage);
+            
+            
+                
+            function placeImage() {
+                
+                
+                //get coordinates of mouse click
+                cx = event.pageX;
+                cy = event.pageY;
+                alert('canvas click'+cx+','+cy); 
+                
+                //get image info of image on active slide
+                var url = document.getElementsByClassName("carousel-item active")[0].children[0].src;
+                alert(url);
+                
+                url2 = "https://www.google.com/url?sa=i&source=images&cd=&ved=2ahUKEwid94eDqKzkAhVOGTQIHY8EDP0QjRx6BAgBEAQ&url=https%3A%2F%2Fthe-test-fun-for-friends.en.softonic.com%2Fiphone&psig=AOvVaw3BdYi4YQpnITBdcWRc1OQP&ust=1567313528497254";
+                //draw that image at the coordinates the mouse just clicked on
+                var sticker = new Image();
+                sticker.src = url2;
+                sticker.onload = function(){
+                    ctx.draw(url, cx, cy); 
+                };
+                
+            }
+            
+
+                
+                
+            
+            
         </script>
+    
     </body>
 </html>
